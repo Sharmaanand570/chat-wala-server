@@ -17,7 +17,7 @@ const io = new Server(server, {
     cors: {
         origin: [
             "http://localhost:3000",
-            "http://192.168.5.104:3000",
+            "http://192.168.5.102:3000",
             "http://192.168.224.178:3000"
         ],
         methods: ["GET", "POST"]
@@ -40,7 +40,7 @@ io.on("connect", (socket) => {
     socket.on("out_from_room", (data) => {
         socket.leave(data)
     })
-    
+
     socket.on("send_message", (data) => {
         // socket.broadcast.emit("received_message", data)
         console.log(data)
